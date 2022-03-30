@@ -1,0 +1,7 @@
+GPy==1.10.0
+GPyOpt==1.2.6
+numpy==1.22.3
+pandas==1.4.1
+platypus==1.0
+scipy==1.8.0
+smt==1.2.0
