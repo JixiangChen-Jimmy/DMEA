@@ -1,3 +1,21 @@
+'''
+Code adapted from https://github.com/Alaya-in-Matrix/pyMACE
+{pmlr-v80-lyu18a,
+  title = 	 {Batch Bayesian Optimization via Multi-objective Acquisition Ensemble for Automated Analog Circuit Design},
+  author =       {Lyu, Wenlong and Yang, Fan and Yan, Changhao and Zhou, Dian and Zeng, Xuan},
+  booktitle = 	 {Proceedings of the 35th International Conference on Machine Learning},
+  pages = 	 {3306--3314},
+  year = 	 {2018},
+  editor = 	 {Dy, Jennifer and Krause, Andreas},
+  volume = 	 {80},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {10--15 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v80/lyu18a/lyu18a.pdf},
+  url = 	 {https://proceedings.mlr.press/v80/lyu18a.html},
+}
+'''
+
 from GP_model import GP
 import numpy as np
 from platypus import NSGAII, Problem, Real, Solution, InjectedPopulation, Archive
@@ -103,6 +121,8 @@ class DMEA:
             m = self.model.ms[i - 1]
             xx = self.best_x + np.random.randn(self.best_x.size).reshape(self.best_x.shape) * 1e-3
 
+            print(np.random.randn(self.best_x.size))
+
             def mobj(x):
                 return obj(x, m)
 
@@ -128,6 +148,7 @@ class DMEA:
             self.exy = self.dby
             self.m = self.model.m
             guess_x = self.gen_guess()
+            print('Hello')
             num_guess = guess_x.shape[0]
 
             self.log = []
