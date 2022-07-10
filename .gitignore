@@ -1,8 +1,4 @@
-!DMEA_method.py
-!GP_model.py
-!LICENSE
-!main.py
-!objective.py
-!prefer_select.py
-!README.md
-!requirements.txt
+dbxy/*
+y_best/*
+__pycache__/*
+.idea/*
